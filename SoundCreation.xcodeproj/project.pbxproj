@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		89310FE815B7E3A8005E7C23 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89310FE715B7E3A8005E7C23 /* CoreAudio.framework */; };
 		89310FEA15B7E3F3005E7C23 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */; };
+		89BDE57015B87A67006206E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BDE56F15B87A67006206E2 /* QuartzCore.framework */; };
 		89F0374315B7C1AA00CFAE4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0374215B7C1AA00CFAE4F /* UIKit.framework */; };
 		89F0374515B7C1AA00CFAE4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0374415B7C1AA00CFAE4F /* Foundation.framework */; };
 		89F0374715B7C1AA00CFAE4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0374615B7C1AA00CFAE4F /* CoreGraphics.framework */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		89310FE715B7E3A8005E7C23 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		89BDE56F15B87A67006206E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		89F0373E15B7C1AA00CFAE4F /* SoundCreation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCreation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F0374215B7C1AA00CFAE4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		89F0374415B7C1AA00CFAE4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BDE57015B87A67006206E2 /* QuartzCore.framework in Frameworks */,
 				89310FEA15B7E3F3005E7C23 /* AudioToolbox.framework in Frameworks */,
 				89310FE815B7E3A8005E7C23 /* CoreAudio.framework in Frameworks */,
 				89F0374315B7C1AA00CFAE4F /* UIKit.framework in Frameworks */,
@@ -86,6 +89,7 @@
 		89F0374115B7C1AA00CFAE4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89BDE56F15B87A67006206E2 /* QuartzCore.framework */,
 				89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */,
 				89310FE715B7E3A8005E7C23 /* CoreAudio.framework */,
 				89F0375F15B7C20700CFAE4F /* AudioUnit.framework */,

@@ -7,7 +7,7 @@
     dbgLog(@"Build: %@",currentVersion());
     dbgLog(@"%@",timeStamp());
     
-    [BSAlert alert];
+//    [BSAlert alert];
     
     return YES;
 }

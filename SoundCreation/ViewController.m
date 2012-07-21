@@ -7,10 +7,19 @@ OSStatus RenderTone(void *inRefCon,
                     UInt32 inNumberFrames,
                     AudioBufferList *ioData)
 {
-    const double amplitude = 0.25;
-    const double theta_increment = ((M_PI_X_2 * 880) / 44100);
+    ViewController *viewController = (__bridge ViewController *)inRefCon;
+//    [viewController endTrackingAndCompare]; // Compares the previous run RenderTone
+//    [viewController startTracking];
     
-    double theta = 0;
+    
+    const double amplitude = 0.25; // Lower amplitude means lower volume
+    const double frequency = 440;
+    const double samplingRate = 44100; // 44.1 khz is a common sampling rate
+    const double theta_increment = ((M_PI_X_2 * frequency) / samplingRate); // Split the frequency up into even samples
+     
+    double theta = viewController.theta;
+    
+    NSLog(@"theta: %.3f",theta);
     
     const int channel = 0;
     Float32 *buffer = (Float32 *)ioData->mBuffers[channel].mData;
@@ -18,20 +27,20 @@ OSStatus RenderTone(void *inRefCon,
     for (UInt32 frame = 0; frame < inNumberFrames; frame++) {
         buffer[frame] = amplitude * sin(theta);
         theta += theta_increment;
-        if (theta >= M_PI_X_2)
-            theta = 0;
+        if (theta > M_PI_X_2)
+            theta -= M_PI_X_2;
         
     }
     
-    ViewController *viewController = (__bridge ViewController *)inRefCon;
     viewController.theta = theta;
-    
     return noErr;
 }
 
 @implementation ViewController {
     AudioComponentInstance _toneUnit;
     double _sampleRate;
+    
+    CFTimeInterval _timeStart;
 }
 
 #pragma mark - Life cycle
@@ -43,6 +52,20 @@ OSStatus RenderTone(void *inRefCon,
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Tracking
+- (void)startTracking {
+    _timeStart = CACurrentMediaTime();
+}
+
+- (void)endTrackingAndCompare {
+    if (_timeStart <= 0) return;
+    CFTimeInterval now = CACurrentMediaTime();
+    
+//    dbgLog(@"start time: %f",_timeStart);
+//    dbgLog(@"end time: %f",now);
+    dbgLog(@"delta time: %f",(now - _timeStart));
 }
 
 #pragma mark - Actions

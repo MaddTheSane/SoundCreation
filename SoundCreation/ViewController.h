@@ -6,6 +6,10 @@
 
 @property (nonatomic) double theta;
 
+#pragma mark - Time tracking
+-(void)startTracking;
+-(void)endTrackingAndCompare;
+
 #pragma mark - Actions
 - (IBAction)togglePlay:(id)sender;
 
