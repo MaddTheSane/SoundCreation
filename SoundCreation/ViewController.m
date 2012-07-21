@@ -8,9 +8,6 @@ OSStatus RenderTone(void *inRefCon,
                     AudioBufferList *ioData)
 {
     ViewController *viewController = (__bridge ViewController *)inRefCon;
-//    [viewController endTrackingAndCompare]; // Compares the previous run RenderTone
-//    [viewController startTracking];
-    
     
     const double amplitude = 0.25; // Lower amplitude means lower volume
     const double frequency = 440;
@@ -19,7 +16,7 @@ OSStatus RenderTone(void *inRefCon,
      
     double theta = viewController.theta;
     
-    NSLog(@"theta: %.3f",theta);
+//    NSLog(@"theta: %.3f",theta);
     
     const int channel = 0;
     Float32 *buffer = (Float32 *)ioData->mBuffers[channel].mData;
@@ -39,8 +36,6 @@ OSStatus RenderTone(void *inRefCon,
 @implementation ViewController {
     AudioComponentInstance _toneUnit;
     double _sampleRate;
-    
-    CFTimeInterval _timeStart;
 }
 
 #pragma mark - Life cycle
@@ -52,20 +47,6 @@ OSStatus RenderTone(void *inRefCon,
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-#pragma mark - Tracking
-- (void)startTracking {
-    _timeStart = CACurrentMediaTime();
-}
-
-- (void)endTrackingAndCompare {
-    if (_timeStart <= 0) return;
-    CFTimeInterval now = CACurrentMediaTime();
-    
-//    dbgLog(@"start time: %f",_timeStart);
-//    dbgLog(@"end time: %f",now);
-    dbgLog(@"delta time: %f",(now - _timeStart));
 }
 
 #pragma mark - Actions
