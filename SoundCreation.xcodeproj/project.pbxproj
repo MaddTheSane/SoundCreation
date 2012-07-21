@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		89310FE815B7E3A8005E7C23 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89310FE715B7E3A8005E7C23 /* CoreAudio.framework */; };
 		89310FEA15B7E3F3005E7C23 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */; };
+		89528EF315BB41D400D42E6B /* AudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89528EF215BB41D400D42E6B /* AudioEngine.m */; };
 		89BDE57015B87A67006206E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BDE56F15B87A67006206E2 /* QuartzCore.framework */; };
 		89F0374315B7C1AA00CFAE4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0374215B7C1AA00CFAE4F /* UIKit.framework */; };
 		89F0374515B7C1AA00CFAE4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0374415B7C1AA00CFAE4F /* Foundation.framework */; };
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		89310FE715B7E3A8005E7C23 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		89528EF115BB41D400D42E6B /* AudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioEngine.h; path = ../AudioEngine.h; sourceTree = "<group>"; };
+		89528EF215BB41D400D42E6B /* AudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioEngine.m; path = ../AudioEngine.m; sourceTree = "<group>"; };
 		89BDE56F15B87A67006206E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		89F0373E15B7C1AA00CFAE4F /* SoundCreation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCreation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F0374215B7C1AA00CFAE4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -103,6 +106,8 @@
 		89F0374815B7C1AA00CFAE4F /* SoundCreation */ = {
 			isa = PBXGroup;
 			children = (
+				89528EF115BB41D400D42E6B /* AudioEngine.h */,
+				89528EF215BB41D400D42E6B /* AudioEngine.m */,
 				89F0376A15B7C28C00CFAE4F /* Common.h */,
 				89F0376B15B7C28C00CFAE4F /* Common.m */,
 				89F0376115B7C23800CFAE4F /* NSObject+Blocks.h */,
@@ -201,6 +206,7 @@
 				89F0376615B7C24100CFAE4F /* BSAlert.m in Sources */,
 				89F0376915B7C24A00CFAE4F /* UIColor+BSColors.m in Sources */,
 				89F0376C15B7C28C00CFAE4F /* Common.m in Sources */,
+				89528EF315BB41D400D42E6B /* AudioEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,8 @@ double radiansToDegrees(double);
  */
 #define kFrequency_Ratio 1.05946
 
+#define kSample_Rate    44100 // 44.1 khz
+
 /*
  * Returns the frequency of the note that is a whole step higher
  * or lower than the frequency you give

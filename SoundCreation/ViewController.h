@@ -1,6 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <CoreAudio/CoreAudioTypes.h>
-#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController : UIViewController
 
