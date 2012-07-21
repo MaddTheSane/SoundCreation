@@ -21,9 +21,29 @@ double radiansToDegrees(double radians) {
     return radians * (180/M_PI);
 }
 
+#pragma mark - Music
+double changeFrequencyByWholeStep(double frequency, BOOL stepUp) {
+    if (stepUp)
+        return (frequency * pow(kFrequency_Ratio, 2));
+    else
+        return (frequency / pow(kFrequency_Ratio, 2));
+}
+
+double changeFrequencyByHalfStep(double frequency, BOOL stepUp) {
+    if (stepUp)
+        return (frequency * kFrequency_Ratio);
+    else
+        return (frequency / kFrequency_Ratio);
+}
+
+double changeFrequencyBySteps(double frequency, int steps, BOOL stepUp) {
+    if (stepUp)
+        return (frequency * pow(kFrequency_Ratio, steps));
+    else
+        return (frequency / pow(kFrequency_Ratio, steps));
+}
 
 #pragma mark - Logging
-
 #if DEBUG
 
 void _dbgLog(const char* pszFile, int line, NSString* fmt, ...) {

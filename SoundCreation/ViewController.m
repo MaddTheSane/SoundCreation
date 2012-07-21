@@ -10,10 +10,10 @@ OSStatus RenderTone(void *inRefCon,
     ViewController *viewController = (__bridge ViewController *)inRefCon;
     
     const double amplitude = 0.25; // Lower amplitude means lower volume
-    const double frequency = 440;
-    const double samplingRate = 44100; // 44.1 khz is a common sampling rate
-    const double theta_increment = ((M_PI_X_2 * frequency) / samplingRate); // Split the frequency up into even samples
-     
+//    const double frequency = 440;  // 440hz = A4
+    const double samplingRate = 44100; // 44.1khz is a common sampling rate
+    const double theta_increment = ((M_PI_X_2 * viewController.frequency) / samplingRate); // Split the frequency up into even samples
+    
     double theta = viewController.theta;
     
 //    NSLog(@"theta: %.3f",theta);
@@ -36,35 +36,57 @@ OSStatus RenderTone(void *inRefCon,
 @implementation ViewController {
     AudioComponentInstance _toneUnit;
     double _sampleRate;
+    int _currentTag;
 }
+@synthesize stopButton = _stopButton;
 
 #pragma mark - Life cycle
+#define MIDDLE_C 261.63
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _frequency = MIDDLE_C;
     _sampleRate = 44100;
+    
+    _currentTag = 1000;
+    
+    _stopButton.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+
 #pragma mark - Actions
-- (IBAction)togglePlay:(id)sender {
-    if (!_toneUnit) {
-        [self createAudioUnit];
-        
-        OSErr err = AudioUnitInitialize(_toneUnit);
-        NSAssert1(err == noErr, @"Error initializing unit: %hd", err);
-        
-        err = AudioOutputUnitStart(_toneUnit);
-        NSAssert1(err == noErr, @"Error starting unit: %hd", err);
-    } else {
-        AudioOutputUnitStart(_toneUnit);
-        AudioUnitUninitialize(_toneUnit);
-        AudioComponentInstanceDispose(_toneUnit);
-        _toneUnit = nil;
-    }
+- (IBAction)playNote:(id)sender {
+    if (_toneUnit)
+        [self stop:nil];
+    
+    _currentTag = ((UIButton *)sender).tag;
+    
+    // Button tag corresponds to number of steps from c
+    _frequency = changeFrequencyBySteps(MIDDLE_C, _currentTag, YES);
+    
+    [self createAudioUnit];
+    
+    OSErr err = AudioUnitInitialize(_toneUnit);
+    NSAssert1(err == noErr, @"Error initializing unit: %hd", err);
+    
+    err = AudioOutputUnitStart(_toneUnit);
+    NSAssert1(err == noErr, @"Error starting unit: %hd", err);
+    
+    _stopButton.enabled = YES;
+}
+
+- (IBAction)stop:(id)sender {
+    AudioOutputUnitStop(_toneUnit);
+    AudioUnitUninitialize(_toneUnit);
+    AudioComponentInstanceDispose(_toneUnit);
+    _toneUnit = nil;
+    
+    _stopButton.enabled = NO;
 }
 
 #pragma mark - Audio Unit
