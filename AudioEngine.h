@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import <CoreAudio/CoreAudioTypes.h>
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface AudioEngine : NSObject

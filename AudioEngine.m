@@ -1,11 +1,13 @@
 #import "AudioEngine.h"
 
-OSStatus render(void *inRefCon,
-                AudioUnitRenderActionFlags *ioActionFlags,
-                const AudioTimeStamp *inTimeStamp,
-                UInt32 inBusNumber,
-                UInt32 inNumberFrames,
-                AudioBufferList *ioData) {
+// Audio render callback
+OSStatus render(void *inRefCon, // Pointer to an object to pass in parameters
+                AudioUnitRenderActionFlags *ioActionFlags, // Special states
+                const AudioTimeStamp *inTimeStamp, // Use to sync multiple sources
+                UInt32 inBusNumber, // The bus of the audio unit
+                UInt32 inNumberFrames, // Number of frames of sample data that will be passed in
+                AudioBufferList *ioData) // Struct containing an array of buffers, representing sample data, and a count of buffers
+{
     
     AudioEngine *engine = (__bridge AudioEngine *)inRefCon;
     
@@ -17,6 +19,11 @@ OSStatus render(void *inRefCon,
     const int channel = 0;
     Float32 *buffer = (Float32 *)ioData->mBuffers[channel].mData;
     
+//    dbgLog(@"%i",(Float32 *)ioData->mNumberBuffers);
+//    dbgLog(@"%i",inNumberFrames);
+//    dbgLog(@"%i",inBusNumber);
+    
+    // Fill the buffer with audio samples
     for (UInt32 frame = 0; frame < inNumberFrames; frame++) {
         buffer[frame] = amplitude * sin(theta);
         theta += theta_increment;
@@ -34,6 +41,7 @@ static AudioEngine *inst = nil;
 
 @implementation AudioEngine {
     AudioComponentInstance _audioUnit;
+//    AUGraph *_audioGraph;
 }
 
 #pragma mark - Singleton
@@ -51,14 +59,9 @@ static AudioEngine *inst = nil;
         [self stop];
     
     _frequency = changeFrequencyBySteps(MIDDLE_C, step, YES);
-    
     [self createAudioUnit];
-    
-    OSErr err = AudioUnitInitialize(_audioUnit);
-    NSAssert1(err == noErr, @"Error initializing unit: %hd", err);
-    
-    err = AudioOutputUnitStart(_audioUnit);
-    NSAssert1(err == noErr, @"Error starting unit: %hd", err);
+    AudioUnitInitialize(_audioUnit);
+    AudioOutputUnitStart(_audioUnit);
 }
 
 - (void)stop {
@@ -70,6 +73,8 @@ static AudioEngine *inst = nil;
 
 #pragma mark - Audio unit
 - (void)createAudioUnit {
+    
+    // output component description
     AudioComponentDescription defaultOutputDescription;
     defaultOutputDescription.componentType = kAudioUnitType_Output;
     defaultOutputDescription.componentSubType = kAudioUnitSubType_RemoteIO;
@@ -77,21 +82,24 @@ static AudioEngine *inst = nil;
     defaultOutputDescription.componentFlags = 0;
     defaultOutputDescription.componentFlagsMask = 0;
     
-    AudioComponent defaultOutput = AudioComponentFindNext(NULL, &defaultOutputDescription);
-    NSAssert(defaultOutput, @"Can't find default output");
     
-    OSErr err = AudioComponentInstanceNew(defaultOutput, &_audioUnit);
-    NSAssert1(_audioUnit, @"Error creating unint: %hd", err);
+    // Create an instance of the output component and set it to the audio unit
+    AudioComponent outputComponent = AudioComponentFindNext(NULL, &defaultOutputDescription);
+    OSErr err = AudioComponentInstanceNew(outputComponent, &_audioUnit);
     
+    // Setup render callback
+    // Calls our render function which provides a buffer of audio samples
     AURenderCallbackStruct input;
-    input.inputProc = render;
+    input.inputProc = &render;
     input.inputProcRefCon = (__bridge void *)(self);
+    
+    // Set the callback struct to our audio unit
     err = AudioUnitSetProperty(_audioUnit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &input, sizeof(input));
-    NSAssert1(err == noErr, @"Error setting callbackL %hd", err);
     
     const int four_bytes_per_float = 4;
     const int eight_bits_per_byte  = 8;
     
+    // Specify the format for the audio stream
     AudioStreamBasicDescription streamFormat;
     streamFormat.mSampleRate = kSample_Rate;
     streamFormat.mFormatID = kAudioFormatLinearPCM;
@@ -101,9 +109,10 @@ static AudioEngine *inst = nil;
     streamFormat.mBytesPerFrame = four_bytes_per_float;
     streamFormat.mChannelsPerFrame = 1;
     streamFormat.mBitsPerChannel = four_bytes_per_float * eight_bits_per_byte;
+    
+    // Set the audio stream to the audio unit
     err = AudioUnitSetProperty(_audioUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &streamFormat,
                                sizeof(AudioStreamBasicDescription));
-    NSAssert1(err == noErr, @"Error setting stream format: %hd", err);
 }
 
 @end
