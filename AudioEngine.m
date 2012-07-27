@@ -11,7 +11,7 @@ OSStatus render(void *inRefCon, // Pointer to an object to pass in parameters
     
     AudioEngine *engine = (__bridge AudioEngine *)inRefCon;
     
-    const double amplitude = 0.25; // Lower amplitude means lower volume
+//    const double amplitude = 0.25; // Lower amplitude means lower volume
     const double theta_increment = ((M_PI_X_2 * engine.frequency) / kSample_Rate); // Split the frequency up into even samples
     
     double theta = engine.theta;
@@ -25,7 +25,9 @@ OSStatus render(void *inRefCon, // Pointer to an object to pass in parameters
     
     // Fill the buffer with audio samples
     for (UInt32 frame = 0; frame < inNumberFrames; frame++) {
-        buffer[frame] = amplitude * sin(theta);
+        double audioSample;
+        audioSample = [engine processAudio:theta];
+        buffer[frame] = audioSample;
         theta += theta_increment;
         if (theta > M_PI_X_2)
             theta -= M_PI_X_2;
@@ -41,7 +43,7 @@ static AudioEngine *inst = nil;
 
 @implementation AudioEngine {
     AudioComponentInstance _audioUnit;
-//    AUGraph *_audioGraph;
+    AUGraph _audioGraph;
 }
 
 #pragma mark - Singleton
@@ -49,6 +51,12 @@ static AudioEngine *inst = nil;
     if (!inst)
         inst = [[AudioEngine alloc] init];
     return inst;
+}
+
+#pragma mark - Audio processing
+- (double)processAudio:(double)theta {
+    // Returns a pure tone by default
+    return sin(theta) * 2.25;
 }
 
 #pragma mark - Audio control
@@ -83,7 +91,7 @@ static AudioEngine *inst = nil;
     defaultOutputDescription.componentFlagsMask = 0;
     
     
-    // Create an instance of the output component and set it to the audio unit
+    // Create an audio unit with our current description
     AudioComponent outputComponent = AudioComponentFindNext(NULL, &defaultOutputDescription);
     OSErr err = AudioComponentInstanceNew(outputComponent, &_audioUnit);
     
@@ -113,6 +121,54 @@ static AudioEngine *inst = nil;
     // Set the audio stream to the audio unit
     err = AudioUnitSetProperty(_audioUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &streamFormat,
                                sizeof(AudioStreamBasicDescription));
+}
+
+
+// TODO: FIGURE OUT HOW IF THIS IS USEFUL; THEN FINISH
+#pragma mark - Audio graph
+- (OSStatus)initializeAudioGraph {
+    
+    // Create a new AUGraph
+    NewAUGraph(&_audioGraph);
+    
+    // Create an AUNode
+    // Nodes represent audio units on the graph
+    AUNode someNode;
+    
+    // Create audio component descriptions
+    AudioComponentDescription someOutputDescription;
+    someOutputDescription.componentType = kAudioUnitType_Output;
+    someOutputDescription.componentSubType = kAudioUnitSubType_RemoteIO;
+    someOutputDescription.componentManufacturer = kAudioUnitManufacturer_Apple;
+    someOutputDescription.componentFlags = 0;
+    someOutputDescription.componentFlagsMask = 0;
+    
+    // Add node to the graph
+    AUGraphAddNode(_audioGraph, &someOutputDescription, &someNode);
+    
+    AUGraphOpen(_audioGraph);
+    
+    AUGraphNodeInfo(_audioGraph, someNode, NULL, &_audioUnit);
+    
+    
+    
+    // Initialize the audio graph
+    AUGraphInitialize(_audioGraph);
+    
+    return noErr;
+}
+
+- (OSStatus)startAUGraph {
+    return AUGraphStart(_audioGraph);
+}
+
+- (OSStatus)stopAUGraph {
+    Boolean isRunning;
+    AUGraphIsRunning(_audioGraph, &isRunning);
+
+    if (isRunning)
+        return AUGraphStop(_audioGraph);
+    return NO;
 }
 
 @end

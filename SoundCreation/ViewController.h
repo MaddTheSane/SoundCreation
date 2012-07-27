@@ -2,8 +2,7 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic) double frequency;
-@property (nonatomic) double theta;
+@property (nonatomic,strong) id engine;
 
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 
