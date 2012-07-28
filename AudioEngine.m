@@ -1,5 +1,28 @@
 #import "AudioEngine.h"
 
+#pragma mark - Helpers
+double changeFrequencyByWholeStep(double frequency, BOOL stepUp) {
+    if (stepUp)
+        return (frequency * pow(kFrequency_Ratio, 2));
+    else
+        return (frequency / pow(kFrequency_Ratio, 2));
+}
+
+double changeFrequencyByHalfStep(double frequency, BOOL stepUp) {
+    if (stepUp)
+        return (frequency * kFrequency_Ratio);
+    else
+        return (frequency / kFrequency_Ratio);
+}
+
+double changeFrequencyBySteps(double frequency, int steps, BOOL stepUp) {
+    if (stepUp)
+        return (frequency * pow(kFrequency_Ratio, steps));
+    else
+        return (frequency / pow(kFrequency_Ratio, steps));
+}
+
+#pragma mark - sample rendering
 // Audio render callback
 OSStatus render(void *inRefCon, // Pointer to an object to pass in parameters
                 AudioUnitRenderActionFlags *ioActionFlags, // Special states
@@ -39,24 +62,9 @@ OSStatus render(void *inRefCon, // Pointer to an object to pass in parameters
     return noErr;
 }
 
-static AudioEngine *inst = nil;
-
 @implementation AudioEngine {
     AudioComponentInstance _audioUnit;
     AUGraph _audioGraph;
-}
-
-#pragma mark - Singleton
-+ (AudioEngine *)sharedEngine {
-    if (!inst)
-        inst = [[AudioEngine alloc] init];
-    return inst;
-}
-
-#pragma mark - Audio processing
-- (double)processAudio:(double)theta {
-    // Returns a pure tone by default
-    return sin(theta) * 2.25;
 }
 
 #pragma mark - Audio control
@@ -67,7 +75,8 @@ static AudioEngine *inst = nil;
         [self stop];
     
     _frequency = changeFrequencyBySteps(MIDDLE_C, step, YES);
-    [self createAudioUnit];
+    
+    [self createOutputAudioUnit];
     AudioUnitInitialize(_audioUnit);
     AudioOutputUnitStart(_audioUnit);
 }
@@ -79,8 +88,14 @@ static AudioEngine *inst = nil;
     _audioUnit = nil;
 }
 
+#pragma mark - Audio processing
+- (double)processAudio:(double)theta {
+    // Returns a pure tone by default
+    return sin(theta) * 2.25;
+}
+
 #pragma mark - Audio unit
-- (void)createAudioUnit {
+- (void)createOutputAudioUnit {
     
     // output component description
     AudioComponentDescription defaultOutputDescription;
@@ -123,8 +138,7 @@ static AudioEngine *inst = nil;
                                sizeof(AudioStreamBasicDescription));
 }
 
-
-// TODO: FIGURE OUT HOW IF THIS IS USEFUL; THEN FINISH
+// TODO: FIGURE OUT IF THIS IS USEFUL; THEN FINISH
 #pragma mark - Audio graph
 - (OSStatus)initializeAudioGraph {
     
