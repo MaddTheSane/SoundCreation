@@ -11,6 +11,7 @@
 		5522E4E11A2E334D00AE974C /* PianoToneEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5522E4DF1A2E334D00AE974C /* PianoToneEngine.cpp */; };
 		5522E4E41A2E349200AE974C /* PureToneEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5522E4E21A2E349200AE974C /* PureToneEngine.cpp */; };
 		5522E4E71A2E352600AE974C /* RichToneEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5522E4E51A2E352600AE974C /* RichToneEngine.cpp */; };
+		5522E4EA1A2E487A00AE974C /* SquareWaveAudioEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5522E4E81A2E487A00AE974C /* SquareWaveAudioEngine.cpp */; };
 		89310FE815B7E3A8005E7C23 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89310FE715B7E3A8005E7C23 /* CoreAudio.framework */; };
 		89310FEA15B7E3F3005E7C23 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */; };
 		89BDE57015B87A67006206E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BDE56F15B87A67006206E2 /* QuartzCore.framework */; };
@@ -39,6 +40,8 @@
 		5522E4E31A2E349200AE974C /* PureToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureToneEngine.h; sourceTree = "<group>"; };
 		5522E4E51A2E352600AE974C /* RichToneEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RichToneEngine.cpp; sourceTree = "<group>"; };
 		5522E4E61A2E352600AE974C /* RichToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichToneEngine.h; sourceTree = "<group>"; };
+		5522E4E81A2E487A00AE974C /* SquareWaveAudioEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SquareWaveAudioEngine.cpp; sourceTree = "<group>"; };
+		5522E4E91A2E487A00AE974C /* SquareWaveAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareWaveAudioEngine.h; sourceTree = "<group>"; };
 		89310FE715B7E3A8005E7C23 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		89BDE56F15B87A67006206E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -133,6 +136,8 @@
 				5522E4E21A2E349200AE974C /* PureToneEngine.cpp */,
 				5522E4E61A2E352600AE974C /* RichToneEngine.h */,
 				5522E4E51A2E352600AE974C /* RichToneEngine.cpp */,
+				5522E4E91A2E487A00AE974C /* SquareWaveAudioEngine.h */,
+				5522E4E81A2E487A00AE974C /* SquareWaveAudioEngine.cpp */,
 				89F0376A15B7C28C00CFAE4F /* Common.h */,
 				89F0376B15B7C28C00CFAE4F /* Common.m */,
 				89F0376115B7C23800CFAE4F /* NSObject+Blocks.h */,
@@ -234,6 +239,7 @@
 				5522E4E71A2E352600AE974C /* RichToneEngine.cpp in Sources */,
 				89F0376915B7C24A00CFAE4F /* UIColor+BSColors.m in Sources */,
 				89F0376C15B7C28C00CFAE4F /* Common.m in Sources */,
+				5522E4EA1A2E487A00AE974C /* SquareWaveAudioEngine.cpp in Sources */,
 				89DC3C0F15C3065600873649 /* RichToneViewController.mm in Sources */,
 				5522E4DE1A2E296000AE974C /* AudioEngine.cpp in Sources */,
 				89D08E4B15C369C90012BB72 /* PianoViewController.mm in Sources */,
