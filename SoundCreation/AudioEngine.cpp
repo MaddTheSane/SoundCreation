@@ -11,15 +11,7 @@
 
 #define MIDDLE_C 261.63
 
-AudioEngine::AudioEngine()
-{
-	_audioUnit = NULL;
-	_audioGraph = NULL;
-	theta = 0;
-	frequency = 0;
-
-}
-
+#pragma mark - Helpers
 double changeFrequencyByWholeStep(double frequency, bool stepUp) {
 	if (stepUp)
 		return (frequency * pow(kFrequency_Ratio, 2));
@@ -81,11 +73,13 @@ OSStatus AudioEngine::render(void *inRefCon, // Pointer to an object to pass in 
 	return noErr;
 }
 
+#pragma mark - Audio processing
 double AudioEngine::ProcessAudio(double thetaa) {
 	// Returns a pure tone by default
 	return sin(theta) * 2.25;
 }
 
+#pragma mark - Audio control
 void AudioEngine::Play(long step) {
 	if (_audioUnit) {
 		Stop();
@@ -105,6 +99,17 @@ void AudioEngine::Stop() {
 	_audioUnit = NULL;
 }
 
+#pragma mark - initialization
+AudioEngine::AudioEngine()
+{
+	_audioUnit = NULL;
+	_audioGraph = NULL;
+	theta = 0;
+	frequency = 0;
+	
+}
+
+#pragma mark - Audio unit
 void AudioEngine::CreateOutputAudioUnit() {
 	// output component description
 	AudioComponentDescription defaultOutputDescription;

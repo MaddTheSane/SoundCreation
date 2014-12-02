@@ -41,8 +41,6 @@
 		5522E4E61A2E352600AE974C /* RichToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichToneEngine.h; sourceTree = "<group>"; };
 		89310FE715B7E3A8005E7C23 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		89528EF115BB41D400D42E6B /* AudioEngineobj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioEngineobj.h; path = ../AudioEngineobj.h; sourceTree = "<group>"; };
-		89528EF215BB41D400D42E6B /* AudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioEngine.m; path = ../AudioEngine.m; sourceTree = "<group>"; };
 		89BDE56F15B87A67006206E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		89D08E4915C369C90012BB72 /* PianoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoViewController.h; sourceTree = "<group>"; };
 		89D08E4A15C369C90012BB72 /* PianoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PianoViewController.mm; sourceTree = "<group>"; };
@@ -135,8 +133,6 @@
 				5522E4E21A2E349200AE974C /* PureToneEngine.cpp */,
 				5522E4E61A2E352600AE974C /* RichToneEngine.h */,
 				5522E4E51A2E352600AE974C /* RichToneEngine.cpp */,
-				89528EF115BB41D400D42E6B /* AudioEngineobj.h */,
-				89528EF215BB41D400D42E6B /* AudioEngine.m */,
 				89F0376A15B7C28C00CFAE4F /* Common.h */,
 				89F0376B15B7C28C00CFAE4F /* Common.m */,
 				89F0376115B7C23800CFAE4F /* NSObject+Blocks.h */,

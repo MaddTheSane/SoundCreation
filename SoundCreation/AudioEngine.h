@@ -68,25 +68,46 @@ __END_DECLS
 class AudioEngine {
 	AudioComponentInstance _audioUnit;
 	AUGraph _audioGraph;
-	static OSStatus render(void *inRefCon, // Pointer to an object to pass in parameters
-						   AudioUnitRenderActionFlags *ioActionFlags, // Special states
-						   const AudioTimeStamp *inTimeStamp, // Use to sync multiple sources
-						   UInt32 inBusNumber, // The bus of the audio unit
-						   UInt32 inNumberFrames, // Number of frames of sample data that will be passed in
+	static OSStatus render(void *inRefCon,
+						   AudioUnitRenderActionFlags *ioActionFlags,
+						   const AudioTimeStamp *inTimeStamp,
+						   UInt32 inBusNumber,
+						   UInt32 inNumberFrames,
 						   AudioBufferList *ioData);
 	
 	void CreateOutputAudioUnit();
 
 
 protected:
+	
+	// render method needs access to these
 	 double theta;
 	 double frequency;
 	
 public:
 	
+	
+#pragma mark - Audio processing
+	virtual double ProcessAudio(double theta);
+	
+#pragma mark - Initialization
 	//Needed because C++ doesn't blank the values.
 	AudioEngine();
-	virtual double ProcessAudio(double theta);
+	
+	//-(id)initInstrument:(Instrument)instrument;
+	
+	//#pragma mark - Base note
+	// Sets the base note that everything would revolve around
+	//-(void)setBaseNote:(double)frequency;
+	//
+	//#pragma mark - Octaves
+	//
+	//#pragma mark - Intervals
+	//
+	//#pragma mark - Chords
+	
+#pragma mark - Audio control
+	// Plays a note a given number of steps from base note
 	void Play(long step);
 	void Stop();
 	
