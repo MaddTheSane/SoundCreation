@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Pure tones-->
@@ -18,135 +17,107 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-sv-o77">
-                                <rect key="frame" x="144" y="10" width="33" height="30"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stop:" destination="2" eventType="touchUpInside" id="dbo-eZ-gXk"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7z-l9-mqr">
-                                <rect key="frame" x="59" y="125" width="44" height="30"/>
+                                <rect key="frame" x="80" y="125" width="30" height="30"/>
                                 <state key="normal" title="C"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="SOM-7P-8uI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIY-0I-RLW">
-                                <rect key="frame" x="138" y="125" width="44" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="GdF-AQ-SIH"/>
-                                </constraints>
-                                <state key="normal" title="C♯">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="145" y="125" width="30" height="30"/>
+                                <state key="normal" title="C♯"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="KGY-Z1-hWA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYO-qm-iTR">
-                                <rect key="frame" x="217" y="125" width="44" height="30"/>
-                                <state key="normal" title="D">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="210" y="125" width="30" height="30"/>
+                                <state key="normal" title="D"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="K0e-qx-4hh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5U-gA-0rd">
-                                <rect key="frame" x="59" y="163" width="44" height="30"/>
-                                <state key="normal" title="D♯">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="80" y="163" width="30" height="30"/>
+                                <state key="normal" title="D♯"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="tWK-NH-KgN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwi-ul-mfN">
-                                <rect key="frame" x="138" y="163" width="44" height="30"/>
-                                <state key="normal" title="E">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="145" y="163" width="30" height="30"/>
+                                <state key="normal" title="E"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="4jz-Gn-siQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A60-2E-MEf">
-                                <rect key="frame" x="217" y="163" width="44" height="30"/>
-                                <state key="normal" title="F">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="210" y="163" width="30" height="30"/>
+                                <state key="normal" title="F"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="dVG-MH-Gdl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS0-tE-sNn">
-                                <rect key="frame" x="59" y="201" width="44" height="30"/>
-                                <state key="normal" title="F♯">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="80" y="201" width="30" height="30"/>
+                                <state key="normal" title="F♯"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="WGs-UY-esU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec5-Ej-u9P">
-                                <rect key="frame" x="138" y="201" width="44" height="30"/>
-                                <state key="normal" title="G">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="145" y="201" width="30" height="30"/>
+                                <state key="normal" title="G"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="HVJ-YU-cKG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCt-pY-A5I">
-                                <rect key="frame" x="217" y="201" width="44" height="30"/>
-                                <state key="normal" title="G♯">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="210" y="201" width="30" height="30"/>
+                                <state key="normal" title="G♯"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="XRx-wY-Hh3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buR-oc-gqq">
-                                <rect key="frame" x="59" y="239" width="44" height="30"/>
-                                <state key="normal" title="A">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="80" y="239" width="30" height="30"/>
+                                <state key="normal" title="A"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="7G9-UR-JCi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlL-W2-bcI">
-                                <rect key="frame" x="138" y="239" width="44" height="30"/>
-                                <state key="normal" title="A♯">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="145" y="239" width="30" height="30"/>
+                                <state key="normal" title="A♯"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="OXa-jX-jbV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrL-kh-Arz">
-                                <rect key="frame" x="217" y="239" width="44" height="30"/>
-                                <state key="normal" title="B">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="210" y="239" width="30" height="30"/>
+                                <state key="normal" title="B"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="xsn-fo-Uir"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMQ-Ec-9VK">
-                                <rect key="frame" x="138" y="277" width="44" height="30"/>
-                                <state key="normal" title="C">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="145" y="277" width="30" height="30"/>
+                                <state key="normal" title="C"/>
                                 <connections>
                                     <action selector="playNote:" destination="2" eventType="touchUpInside" id="72g-ZB-F1G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-sv-o77">
+                                <rect key="frame" x="144" y="28" width="33" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="2" eventType="touchUpInside" id="dbo-eZ-gXk"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rUG-sv-o77" firstAttribute="top" secondItem="3" secondAttribute="topMargin" constant="10" id="0Qm-D9-8Le"/>
                             <constraint firstItem="ec5-Ej-u9P" firstAttribute="trailing" secondItem="nwi-ul-mfN" secondAttribute="trailing" id="1t2-Qy-pl3"/>
                             <constraint firstItem="ec5-Ej-u9P" firstAttribute="baseline" secondItem="dCt-pY-A5I" secondAttribute="baseline" id="27X-bc-BlP"/>
                             <constraint firstItem="h7z-l9-mqr" firstAttribute="trailing" secondItem="XS0-tE-sNn" secondAttribute="trailing" id="2wi-yO-1qT"/>
@@ -179,6 +150,7 @@
                             <constraint firstItem="nwi-ul-mfN" firstAttribute="baseline" secondItem="V5U-gA-0rd" secondAttribute="baseline" id="kaa-5O-P8e"/>
                             <constraint firstAttribute="centerY" secondItem="ec5-Ej-u9P" secondAttribute="centerY" priority="750" id="ko7-Um-Qx6"/>
                             <constraint firstItem="h7z-l9-mqr" firstAttribute="leading" secondItem="XS0-tE-sNn" secondAttribute="leading" id="mz6-Tt-4K0"/>
+                            <constraint firstItem="rUG-sv-o77" firstAttribute="top" secondItem="2hQ-YT-LTC" secondAttribute="bottom" constant="8" symbolic="YES" id="oMQ-KN-SxE"/>
                             <constraint firstItem="buR-oc-gqq" firstAttribute="leading" secondItem="XS0-tE-sNn" secondAttribute="leading" id="rEg-Fp-Eq8"/>
                             <constraint firstItem="ec5-Ej-u9P" firstAttribute="leading" secondItem="nwi-ul-mfN" secondAttribute="leading" id="sXl-Eq-85T"/>
                             <constraint firstItem="h7z-l9-mqr" firstAttribute="leading" secondItem="V5U-gA-0rd" secondAttribute="leading" id="ssT-3s-ELe"/>
@@ -204,6 +176,8 @@
                 <tabBarController id="4QF-JM-Kuu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Em2-wt-bL2">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -231,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfd-uF-TMz">
-                                <rect key="frame" x="144" y="30" width="33" height="30"/>
+                                <rect key="frame" x="144" y="28" width="33" height="30"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -375,7 +349,7 @@
                             <constraint firstItem="HI8-Sc-p7O" firstAttribute="top" secondItem="tiB-C5-b9Z" secondAttribute="bottom" constant="8" symbolic="YES" id="MZv-o7-YhN"/>
                             <constraint firstItem="HI8-Sc-p7O" firstAttribute="leading" secondItem="tiB-C5-b9Z" secondAttribute="leading" id="Ocf-iK-au9"/>
                             <constraint firstItem="f50-zd-iMN" firstAttribute="baseline" secondItem="8yH-E7-Y5f" secondAttribute="baseline" id="R6N-Vo-Ybu"/>
-                            <constraint firstItem="Qfd-uF-TMz" firstAttribute="top" secondItem="eYN-Kf-3Pp" secondAttribute="bottom" constant="10" id="RTe-Vm-aNd"/>
+                            <constraint firstItem="Qfd-uF-TMz" firstAttribute="top" secondItem="eYN-Kf-3Pp" secondAttribute="bottom" constant="8" symbolic="YES" id="RTe-Vm-aNd"/>
                             <constraint firstItem="f50-zd-iMN" firstAttribute="leading" secondItem="LdI-Tu-3aL" secondAttribute="leading" id="Rxe-Pj-Hhh"/>
                             <constraint firstItem="HI8-Sc-p7O" firstAttribute="baseline" secondItem="LdI-Tu-3aL" secondAttribute="baseline" id="TxX-nE-gPM"/>
                             <constraint firstItem="HI8-Sc-p7O" firstAttribute="leading" secondItem="LRm-gL-2tc" secondAttribute="leading" id="Ub9-6x-xxO"/>
@@ -424,7 +398,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRJ-Dm-oWC">
-                                <rect key="frame" x="144" y="30" width="33" height="30"/>
+                                <rect key="frame" x="144" y="28" width="33" height="30"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -580,7 +554,7 @@
                             <constraint firstItem="i5t-7i-3jL" firstAttribute="leading" secondItem="yjn-qn-2o7" secondAttribute="leading" id="dfJ-IN-1ne"/>
                             <constraint firstItem="CgQ-SA-Ueh" firstAttribute="baseline" secondItem="OoO-VG-Xf1" secondAttribute="baseline" id="dyv-XJ-qgw"/>
                             <constraint firstItem="yjn-qn-2o7" firstAttribute="baseline" secondItem="htS-NF-V7W" secondAttribute="baseline" id="eBG-Wt-aQh"/>
-                            <constraint firstItem="XRJ-Dm-oWC" firstAttribute="top" secondItem="lqw-c9-wYe" secondAttribute="bottom" constant="10" id="eUa-mC-WLE"/>
+                            <constraint firstItem="XRJ-Dm-oWC" firstAttribute="top" secondItem="lqw-c9-wYe" secondAttribute="bottom" constant="8" symbolic="YES" id="eUa-mC-WLE"/>
                             <constraint firstItem="nIN-cq-GV3" firstAttribute="baseline" secondItem="zgC-fL-gLx" secondAttribute="baseline" id="eyD-Sv-yuf"/>
                             <constraint firstItem="KTH-Cx-v9T" firstAttribute="leading" secondItem="htS-NF-V7W" secondAttribute="leading" id="gdd-N9-i8Z"/>
                             <constraint firstItem="KTH-Cx-v9T" firstAttribute="trailing" secondItem="htS-NF-V7W" secondAttribute="trailing" id="ikf-2W-N6u"/>
