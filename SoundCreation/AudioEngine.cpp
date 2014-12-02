@@ -76,7 +76,7 @@ OSStatus AudioEngine::render(void *inRefCon, // Pointer to an object to pass in 
 #pragma mark - Audio processing
 double AudioEngine::ProcessAudio(double thetaa) {
 	// Returns a pure tone by default
-	return sin(theta) * 2.25;
+	return sin(thetaa) * 2.25;
 }
 
 #pragma mark - Audio control
