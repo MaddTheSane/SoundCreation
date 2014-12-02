@@ -86,6 +86,7 @@ protected:
 	
 public:
 	
+	~AudioEngine();
 	
 #pragma mark - Audio processing
 	virtual double ProcessAudio(double theta);

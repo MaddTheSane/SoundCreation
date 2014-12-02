@@ -106,7 +106,12 @@ AudioEngine::AudioEngine()
 	_audioGraph = NULL;
 	theta = 0;
 	frequency = 0;
-	
+}
+
+AudioEngine::~AudioEngine() {
+	if (_audioUnit) {
+		Stop();
+	}
 }
 
 #pragma mark - Audio unit
