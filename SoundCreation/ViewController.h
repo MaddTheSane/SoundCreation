@@ -1,8 +1,10 @@
 #import <UIKit/UIKit.h>
 
+class AudioEngine;
+
 @interface ViewController : UIViewController
 
-@property (nonatomic,strong) id engine;
+@property (nonatomic) AudioEngine *engine;
 
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 

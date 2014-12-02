@@ -5,7 +5,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.engine = [[RichToneEngine alloc] init];
+    self.engine = new RichToneEngine();
 }
 
 @end

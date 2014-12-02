@@ -5,6 +5,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.engine = [[PianoToneEngine alloc] init];
+    self.engine = new PianoToneEngine();
 }
 @end

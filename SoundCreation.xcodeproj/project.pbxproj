@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5522E4DE1A2E296000AE974C /* AudioEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5522E4DC1A2E296000AE974C /* AudioEngine.cpp */; };
+		5522E4E11A2E334D00AE974C /* PianoToneEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5522E4DF1A2E334D00AE974C /* PianoToneEngine.cpp */; };
+		5522E4E41A2E349200AE974C /* PureToneEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5522E4E21A2E349200AE974C /* PureToneEngine.cpp */; };
+		5522E4E71A2E352600AE974C /* RichToneEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5522E4E51A2E352600AE974C /* RichToneEngine.cpp */; };
 		89310FE815B7E3A8005E7C23 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89310FE715B7E3A8005E7C23 /* CoreAudio.framework */; };
 		89310FEA15B7E3F3005E7C23 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */; };
-		89528EF315BB41D400D42E6B /* AudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89528EF215BB41D400D42E6B /* AudioEngine.m */; };
-		8957E9A715C302B10025E2D5 /* PureToneEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957E9A615C302B10025E2D5 /* PureToneEngine.m */; };
 		89BDE57015B87A67006206E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BDE56F15B87A67006206E2 /* QuartzCore.framework */; };
-		89D08E4715C369A50012BB72 /* PianoToneEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D08E4615C369A50012BB72 /* PianoToneEngine.m */; };
-		89D08E4B15C369C90012BB72 /* PianoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D08E4A15C369C90012BB72 /* PianoViewController.m */; };
-		89DC3C0F15C3065600873649 /* RichToneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DC3C0E15C3065600873649 /* RichToneViewController.m */; };
-		89DC3C1315C3067C00873649 /* RichToneEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DC3C1215C3067C00873649 /* RichToneEngine.m */; };
+		89D08E4B15C369C90012BB72 /* PianoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89D08E4A15C369C90012BB72 /* PianoViewController.mm */; };
+		89DC3C0F15C3065600873649 /* RichToneViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89DC3C0E15C3065600873649 /* RichToneViewController.mm */; };
 		89F0374315B7C1AA00CFAE4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0374215B7C1AA00CFAE4F /* UIKit.framework */; };
 		89F0374515B7C1AA00CFAE4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0374415B7C1AA00CFAE4F /* Foundation.framework */; };
 		89F0374715B7C1AA00CFAE4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0374615B7C1AA00CFAE4F /* CoreGraphics.framework */; };
 		89F0374D15B7C1AA00CFAE4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89F0374B15B7C1AA00CFAE4F /* InfoPlist.strings */; };
 		89F0374F15B7C1AA00CFAE4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F0374E15B7C1AA00CFAE4F /* main.m */; };
-		89F0375315B7C1AA00CFAE4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F0375215B7C1AA00CFAE4F /* AppDelegate.m */; };
+		89F0375315B7C1AA00CFAE4F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89F0375215B7C1AA00CFAE4F /* AppDelegate.mm */; };
 		89F0375615B7C1AA00CFAE4F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89F0375415B7C1AA00CFAE4F /* MainStoryboard.storyboard */; };
-		89F0375915B7C1AA00CFAE4F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F0375815B7C1AA00CFAE4F /* ViewController.m */; };
+		89F0375915B7C1AA00CFAE4F /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89F0375815B7C1AA00CFAE4F /* ViewController.mm */; };
 		89F0376315B7C23800CFAE4F /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F0376215B7C23800CFAE4F /* NSObject+Blocks.m */; };
 		89F0376615B7C24100CFAE4F /* BSAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F0376515B7C24100CFAE4F /* BSAlert.m */; };
 		89F0376915B7C24A00CFAE4F /* UIColor+BSColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F0376815B7C24A00CFAE4F /* UIColor+BSColors.m */; };
@@ -31,21 +31,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5522E4DC1A2E296000AE974C /* AudioEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioEngine.cpp; sourceTree = "<group>"; };
+		5522E4DD1A2E296000AE974C /* AudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioEngine.h; sourceTree = "<group>"; };
+		5522E4DF1A2E334D00AE974C /* PianoToneEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PianoToneEngine.cpp; sourceTree = "<group>"; };
+		5522E4E01A2E334D00AE974C /* PianoToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoToneEngine.h; sourceTree = "<group>"; };
+		5522E4E21A2E349200AE974C /* PureToneEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PureToneEngine.cpp; sourceTree = "<group>"; };
+		5522E4E31A2E349200AE974C /* PureToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureToneEngine.h; sourceTree = "<group>"; };
+		5522E4E51A2E352600AE974C /* RichToneEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RichToneEngine.cpp; sourceTree = "<group>"; };
+		5522E4E61A2E352600AE974C /* RichToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichToneEngine.h; sourceTree = "<group>"; };
 		89310FE715B7E3A8005E7C23 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		89310FE915B7E3F3005E7C23 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		89528EF115BB41D400D42E6B /* AudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioEngine.h; path = ../AudioEngine.h; sourceTree = "<group>"; };
+		89528EF115BB41D400D42E6B /* AudioEngineobj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioEngineobj.h; path = ../AudioEngineobj.h; sourceTree = "<group>"; };
 		89528EF215BB41D400D42E6B /* AudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioEngine.m; path = ../AudioEngine.m; sourceTree = "<group>"; };
-		8957E9A515C302B10025E2D5 /* PureToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureToneEngine.h; sourceTree = "<group>"; };
-		8957E9A615C302B10025E2D5 /* PureToneEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PureToneEngine.m; sourceTree = "<group>"; };
 		89BDE56F15B87A67006206E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		89D08E4515C369A50012BB72 /* PianoToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoToneEngine.h; sourceTree = "<group>"; };
-		89D08E4615C369A50012BB72 /* PianoToneEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PianoToneEngine.m; sourceTree = "<group>"; };
 		89D08E4915C369C90012BB72 /* PianoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoViewController.h; sourceTree = "<group>"; };
-		89D08E4A15C369C90012BB72 /* PianoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PianoViewController.m; sourceTree = "<group>"; };
+		89D08E4A15C369C90012BB72 /* PianoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PianoViewController.mm; sourceTree = "<group>"; };
 		89DC3C0D15C3065600873649 /* RichToneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichToneViewController.h; sourceTree = "<group>"; };
-		89DC3C0E15C3065600873649 /* RichToneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichToneViewController.m; sourceTree = "<group>"; };
-		89DC3C1115C3067C00873649 /* RichToneEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichToneEngine.h; sourceTree = "<group>"; };
-		89DC3C1215C3067C00873649 /* RichToneEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichToneEngine.m; sourceTree = "<group>"; };
+		89DC3C0E15C3065600873649 /* RichToneViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RichToneViewController.mm; sourceTree = "<group>"; };
 		89F0373E15B7C1AA00CFAE4F /* SoundCreation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCreation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F0374215B7C1AA00CFAE4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		89F0374415B7C1AA00CFAE4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,10 +57,10 @@
 		89F0374E15B7C1AA00CFAE4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		89F0375015B7C1AA00CFAE4F /* SoundCreation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoundCreation-Prefix.pch"; sourceTree = "<group>"; };
 		89F0375115B7C1AA00CFAE4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		89F0375215B7C1AA00CFAE4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		89F0375215B7C1AA00CFAE4F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		89F0375515B7C1AA00CFAE4F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		89F0375715B7C1AA00CFAE4F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		89F0375815B7C1AA00CFAE4F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		89F0375815B7C1AA00CFAE4F /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		89F0375F15B7C20700CFAE4F /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		89F0376115B7C23800CFAE4F /* NSObject+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
 		89F0376215B7C23800CFAE4F /* NSObject+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Blocks.m"; sourceTree = "<group>"; };
@@ -90,16 +92,10 @@
 		89F0373315B7C1AA00CFAE4F = {
 			isa = PBXGroup;
 			children = (
-				89D08E4515C369A50012BB72 /* PianoToneEngine.h */,
-				89D08E4615C369A50012BB72 /* PianoToneEngine.m */,
 				89D08E4915C369C90012BB72 /* PianoViewController.h */,
-				89D08E4A15C369C90012BB72 /* PianoViewController.m */,
-				8957E9A515C302B10025E2D5 /* PureToneEngine.h */,
-				8957E9A615C302B10025E2D5 /* PureToneEngine.m */,
-				89DC3C1115C3067C00873649 /* RichToneEngine.h */,
-				89DC3C1215C3067C00873649 /* RichToneEngine.m */,
+				89D08E4A15C369C90012BB72 /* PianoViewController.mm */,
 				89DC3C0D15C3065600873649 /* RichToneViewController.h */,
-				89DC3C0E15C3065600873649 /* RichToneViewController.m */,
+				89DC3C0E15C3065600873649 /* RichToneViewController.mm */,
 				89F0374815B7C1AA00CFAE4F /* SoundCreation */,
 				89F0374115B7C1AA00CFAE4F /* Frameworks */,
 				89F0373F15B7C1AA00CFAE4F /* Products */,
@@ -131,7 +127,15 @@
 		89F0374815B7C1AA00CFAE4F /* SoundCreation */ = {
 			isa = PBXGroup;
 			children = (
-				89528EF115BB41D400D42E6B /* AudioEngine.h */,
+				5522E4DD1A2E296000AE974C /* AudioEngine.h */,
+				5522E4DC1A2E296000AE974C /* AudioEngine.cpp */,
+				5522E4E01A2E334D00AE974C /* PianoToneEngine.h */,
+				5522E4DF1A2E334D00AE974C /* PianoToneEngine.cpp */,
+				5522E4E31A2E349200AE974C /* PureToneEngine.h */,
+				5522E4E21A2E349200AE974C /* PureToneEngine.cpp */,
+				5522E4E61A2E352600AE974C /* RichToneEngine.h */,
+				5522E4E51A2E352600AE974C /* RichToneEngine.cpp */,
+				89528EF115BB41D400D42E6B /* AudioEngineobj.h */,
 				89528EF215BB41D400D42E6B /* AudioEngine.m */,
 				89F0376A15B7C28C00CFAE4F /* Common.h */,
 				89F0376B15B7C28C00CFAE4F /* Common.m */,
@@ -142,10 +146,10 @@
 				89F0376415B7C24100CFAE4F /* BSAlert.h */,
 				89F0376515B7C24100CFAE4F /* BSAlert.m */,
 				89F0375115B7C1AA00CFAE4F /* AppDelegate.h */,
-				89F0375215B7C1AA00CFAE4F /* AppDelegate.m */,
+				89F0375215B7C1AA00CFAE4F /* AppDelegate.mm */,
 				89F0375415B7C1AA00CFAE4F /* MainStoryboard.storyboard */,
 				89F0375715B7C1AA00CFAE4F /* ViewController.h */,
-				89F0375815B7C1AA00CFAE4F /* ViewController.m */,
+				89F0375815B7C1AA00CFAE4F /* ViewController.mm */,
 				89F0374915B7C1AA00CFAE4F /* Supporting Files */,
 			);
 			path = SoundCreation;
@@ -188,7 +192,7 @@
 		89F0373515B7C1AA00CFAE4F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = 89F0373815B7C1AA00CFAE4F /* Build configuration list for PBXProject "SoundCreation" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -224,19 +228,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5522E4E11A2E334D00AE974C /* PianoToneEngine.cpp in Sources */,
 				89F0374F15B7C1AA00CFAE4F /* main.m in Sources */,
-				89F0375315B7C1AA00CFAE4F /* AppDelegate.m in Sources */,
-				89F0375915B7C1AA00CFAE4F /* ViewController.m in Sources */,
+				89F0375315B7C1AA00CFAE4F /* AppDelegate.mm in Sources */,
+				5522E4E41A2E349200AE974C /* PureToneEngine.cpp in Sources */,
+				89F0375915B7C1AA00CFAE4F /* ViewController.mm in Sources */,
 				89F0376315B7C23800CFAE4F /* NSObject+Blocks.m in Sources */,
 				89F0376615B7C24100CFAE4F /* BSAlert.m in Sources */,
+				5522E4E71A2E352600AE974C /* RichToneEngine.cpp in Sources */,
 				89F0376915B7C24A00CFAE4F /* UIColor+BSColors.m in Sources */,
 				89F0376C15B7C28C00CFAE4F /* Common.m in Sources */,
-				89528EF315BB41D400D42E6B /* AudioEngine.m in Sources */,
-				8957E9A715C302B10025E2D5 /* PureToneEngine.m in Sources */,
-				89DC3C0F15C3065600873649 /* RichToneViewController.m in Sources */,
-				89DC3C1315C3067C00873649 /* RichToneEngine.m in Sources */,
-				89D08E4715C369A50012BB72 /* PianoToneEngine.m in Sources */,
-				89D08E4B15C369C90012BB72 /* PianoViewController.m in Sources */,
+				89DC3C0F15C3065600873649 /* RichToneViewController.mm in Sources */,
+				5522E4DE1A2E296000AE974C /* AudioEngine.cpp in Sources */,
+				89D08E4B15C369C90012BB72 /* PianoViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

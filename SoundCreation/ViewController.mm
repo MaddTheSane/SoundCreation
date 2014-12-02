@@ -2,17 +2,29 @@
 #import "PureToneEngine.h"
 
 @implementation ViewController {
-    int _currentTag;
+    NSInteger _currentTag;
 }
+@synthesize engine = _engine;
 
 #pragma mark - Life cycle
+
+- (void)setEngine:(AudioEngine *)engine
+{
+	if (_engine) {
+		delete _engine;
+	}
+	
+	if (engine) {
+		_engine = engine;
+	}
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _currentTag = 1000;
     _stopButton.enabled = NO;
     
-    _engine = [[PureToneEngine alloc] init];
+    _engine = new PureToneEngine();
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,13 +36,19 @@
 - (IBAction)playNote:(id)sender {
     _stopButton.enabled = YES;
     _currentTag = ((UIButton *)sender).tag;
-    [_engine play:_currentTag];
+	_engine->Play(_currentTag);
 }
 
 - (IBAction)stop:(id)sender {
     _stopButton.enabled = NO;
-    [_engine stop];
+	_engine->Stop();
 }
+
+- (void)dealloc
+{
+	self.engine = NULL;
+}
+
 @end
 
 
